@@ -37,21 +37,21 @@
       </div>
     </div>
 
-    <!-- Legend -->
-    <div class="legend">
-      <div class="legend-item"><span class="swatch green"></span> No symptoms</div>
-      <div class="legend-item"><span class="swatch yellow"></span> 1 symptom</div>
-      <div class="legend-item"><span class="swatch orange"></span> 2 symptoms</div>
-      <div class="legend-item"><span class="swatch red"></span> 3 symptoms</div>
-    </div>
-
     <!-- Symptoms list -->
     <div class="symptoms-list">
-      <p class="symptoms-list-title">Tracked symptoms:</p>
-      <ul>
-        <li>blood in stool</li>
-        <li>mucus in stool</li>
-        <li>>= 4 stools</li>
+      <!-- Legend -->
+      <div class="legend">
+        <div class="legend-item"><span class="swatch green"></span> No symptoms</div>
+        <div class="legend-item"><span class="swatch yellow"></span> 1 symptom</div>
+        <div class="legend-item"><span class="swatch orange"></span> 2 symptoms</div>
+        <div class="legend-item"><span class="swatch red"></span> 3 symptoms</div>
+      </div>
+
+      <p class="symptoms-list-eyebrow">Tracking</p>
+      <ul class="symptoms-items">
+        <li class="symptom-item">Blood in stool</li>
+        <li class="symptom-item">Mucus in stool</li>
+        <li class="symptom-item">4 or more stools</li>
       </ul>
     </div>
 
@@ -353,7 +353,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
-  margin-top: 16px;
+  margin-top: 0px;
+  margin-bottom: 16px;
   justify-content: center;
 }
 
@@ -379,21 +380,42 @@ export default {
 
 /* Symptoms list */
 .symptoms-list {
-  margin-top: 16px;
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
   color: #ccc;
-  font-size: 0.8rem;
+  text-align: center;
 }
 
-.symptoms-list-title {
-  margin-bottom: 4px;
+.symptoms-list-eyebrow {
+  margin-bottom: 10px;
+  font-size: 0.7rem;
   font-weight: 600;
-  color: #aaa;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ea6ba;
 }
 
-.symptoms-list ul {
-  list-style: disc;
-  padding-left: 20px;
-  line-height: 1.7;
+.symptoms-items {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  padding: 0;
+}
+
+.symptom-item {
+  width: min(100%, 260px);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #d8dcea;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 /* Version footer */
