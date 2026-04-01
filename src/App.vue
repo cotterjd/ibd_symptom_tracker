@@ -45,6 +45,16 @@
       <div class="legend-item"><span class="swatch red"></span> 3 symptoms</div>
     </div>
 
+    <!-- Symptoms list -->
+    <div class="symptoms-list">
+      <p class="symptoms-list-title">Tracked symptoms:</p>
+      <ul>
+        <li>blood in stool</li>
+        <li>mucus in stool</li>
+        <li>>= 4 stools</li>
+      </ul>
+    </div>
+
     <!-- Modal overlay -->
     <div v-if="modalOpen" class="modal-overlay" @click.self="closeModal">
       <div class="modal">
@@ -360,6 +370,25 @@ export default {
 .swatch.yellow { background: #8a7a00; }
 .swatch.orange { background: #a05000; }
 .swatch.red { background: #8a1a1a; }
+
+/* Symptoms list */
+.symptoms-list {
+  margin-top: 16px;
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+.symptoms-list-title {
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #aaa;
+}
+
+.symptoms-list ul {
+  list-style: disc;
+  padding-left: 20px;
+  line-height: 1.7;
+}
 
 /* Modal */
 .modal-overlay {
