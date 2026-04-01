@@ -1,13 +1,14 @@
 {
-  "name": "symptom-tracker",
+  "name": "ibd-symptom-tracker",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy": "vue-tsc && vite build",
+    "tsc": "vue-tsc",
+    "predeploy": "npm run tsc && vite build",
     "preview": "vite preview",
-    "deploy": "echo symptom.cotterslist.com > dist/CNAME && gh-pages -d dist"
+    "deploy": "echo ibd.cotterslist.com > dist/CNAME && gh-pages -d dist"
   },
   "dependencies": {
     "register-service-worker": "^1.7.2",
@@ -15,10 +16,10 @@
   },
   "devDependencies": {
     "@types/node": "^22.5.5",
-    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue": "^5.2.4",
     "gh-pages": "^6.1.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vue-tsc": "^1.8.5"
+    "vite": "^6.4.1",
+    "vue-tsc": "^3.2.6"
   }
 }

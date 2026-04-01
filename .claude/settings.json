@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/typescript/package.json''\\).version\\)\")",
+      "Bash(npm install:*)",
+      "Bash(~/.nvm/versions/node/v20.15.0/bin/node --version)",
+      "Bash(~/.nvm/versions/node/v20.15.0/bin/npm --version)",
+      "Bash(~/.nvm/versions/node/v20.15.0/bin/node ~/.nvm/versions/node/v20.15.0/lib/node_modules/npm/bin/npm-cli.js --version)",
+      "Bash(~/.nvm/versions/node/v20.15.0/bin/node node_modules/vite/bin/vite.js --version)",
+      "Bash(~/ .nvm/versions/node/v20.15.0/bin/node node_modules/vue-tsc/bin/vue-tsc.js --version)",
+      "Bash(~/.nvm/versions/node/v20.15.0/bin/node node_modules/vue-tsc/bin/vue-tsc.js --version)"
+    ]
+  }
+}
