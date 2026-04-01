@@ -55,6 +55,9 @@
       </ul>
     </div>
 
+    <!-- Version footer -->
+    <div class="version-footer">v{{ version }}</div>
+
     <!-- Modal overlay -->
     <div v-if="modalOpen" class="modal-overlay" @click.self="closeModal">
       <div class="modal">
@@ -104,6 +107,8 @@
 </template>
 
 <script>
+import { version } from '../package.json'
+
 const STORAGE_KEY = `symptom-tracker-data`
 
 function storageGet() {
@@ -137,6 +142,7 @@ export default {
         blood: false,
       },
       data: storageGet(),
+      version,
     }
   },
   computed: {
@@ -388,6 +394,14 @@ export default {
   list-style: disc;
   padding-left: 20px;
   line-height: 1.7;
+}
+
+/* Version footer */
+.version-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #666;
 }
 
 /* Modal */
