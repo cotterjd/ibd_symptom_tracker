@@ -7,7 +7,7 @@
     "dev": "vite",
     "predeploy": "vue-tsc && vite build",
     "preview": "vite preview",
-    "deploy": "echo symptom.cotterslist.com > dist/CNAME && gh-pages -d dist"
+    "deploy": "echo ibd.cotterslist.com > dist/CNAME && gh-pages -d dist"
   },
   "dependencies": {
     "register-service-worker": "^1.7.2",
