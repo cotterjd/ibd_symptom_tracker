@@ -1,0 +1,19 @@
+{
+  "name": "Symptom Tracker",
+  "short_name": "SymptomTracker",
+  "description": "A simple IBD symptom tracker with a colored calendar view",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "categories": ["health", "medical"]
+}
