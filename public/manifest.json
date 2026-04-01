@@ -2,7 +2,7 @@
   "name": "Symptom Tracker",
   "short_name": "SymptomTracker",
   "description": "A simple IBD symptom tracker with a colored calendar view",
-  "start_url": "/",
+  "start_url": "https://ibd.cotterslist.com",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
