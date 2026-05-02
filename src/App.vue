@@ -51,7 +51,7 @@
       <ul class="symptoms-items">
         <li class="symptom-item">Blood in stool</li>
         <li class="symptom-item">Mucus in stool</li>
-        <li class="symptom-item">4 or more stools</li>
+        <li class="symptom-item">5 or more stools</li>
       </ul>
     </div>
 
@@ -198,7 +198,7 @@ export default {
       const d = this.getDayData(day)
       if (!d) return ``
       let score = 0
-      if (d.bmCount >= 4) score++
+      if (d.bmCount >= 5) score++
       if (d.mucus) score++
       if (d.blood) score++
       if (score === 0) return `green`
