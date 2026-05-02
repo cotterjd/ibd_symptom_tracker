@@ -47,11 +47,11 @@
         <div class="legend-item"><span class="swatch red"></span> 3 symptoms</div>
       </div>
 
-      <p class="symptoms-list-eyebrow">Tracking</p>
+      <p class="symptoms-list-eyebrow">Symptoms</p>
       <ul class="symptoms-items">
         <li class="symptom-item">Blood in stool</li>
         <li class="symptom-item">Mucus in stool</li>
-        <li class="symptom-item">4 or more stools</li>
+        <li class="symptom-item">5 or more stools</li>
       </ul>
     </div>
 
@@ -198,7 +198,7 @@ export default {
       const d = this.getDayData(day)
       if (!d) return ``
       let score = 0
-      if (d.bmCount >= 4) score++
+      if (d.bmCount >= 5) score++
       if (d.mucus) score++
       if (d.blood) score++
       if (score === 0) return `green`
@@ -411,7 +411,7 @@ export default {
   padding: 8px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: none;
   color: #d8dcea;
   font-size: 0.84rem;
   font-weight: 500;
