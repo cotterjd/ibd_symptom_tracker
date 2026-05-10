@@ -400,7 +400,7 @@ export default {
   background: #880e4f;
 }
 .calendar-cell.purple {
-  background: #4a148c;
+  background: #1a0050;
 }
 .calendar-cell.black {
   background: #000000;
@@ -440,7 +440,7 @@ export default {
 .swatch.orange { background: #b05000; }
 .swatch.red { background: #c62828; }
 .swatch.magenta { background: #880e4f; }
-.swatch.purple { background: #4a148c; }
+.swatch.purple { background: #1a0050; }
 .swatch.black { background: #000000; }
 
 /* Symptoms list */
