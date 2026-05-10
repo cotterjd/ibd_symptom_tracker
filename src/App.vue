@@ -45,6 +45,9 @@
         <div class="legend-item"><span class="swatch yellow"></span> 1 symptom</div>
         <div class="legend-item"><span class="swatch orange"></span> 2 symptoms</div>
         <div class="legend-item"><span class="swatch red"></span> 3 symptoms</div>
+        <div class="legend-item"><span class="swatch dark-red"></span> 4 symptoms</div>
+        <div class="legend-item"><span class="swatch darkest-red"></span> 5 symptoms</div>
+        <div class="legend-item"><span class="swatch black"></span> Incident</div>
       </div>
 
       <p class="symptoms-list-eyebrow">Symptoms</p>
@@ -52,6 +55,8 @@
         <li class="symptom-item">Blood in stool</li>
         <li class="symptom-item">Mucus in stool</li>
         <li class="symptom-item">5 or more stools</li>
+        <li class="symptom-item">Urgency</li>
+        <li class="symptom-item">Pain</li>
       </ul>
     </div>
 
@@ -93,6 +98,42 @@
             </label>
             <label class="radio-label">
               <input type="radio" v-model="form.blood" :value="false" /> No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Did you experience urgency?</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" v-model="form.urgency" :value="true" /> Yes
+            </label>
+            <label class="radio-label">
+              <input type="radio" v-model="form.urgency" :value="false" /> No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Did you experience pain?</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" v-model="form.pain" :value="true" /> Yes
+            </label>
+            <label class="radio-label">
+              <input type="radio" v-model="form.pain" :value="false" /> No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Was this an incident day?</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" v-model="form.incident" :value="true" /> Yes
+            </label>
+            <label class="radio-label">
+              <input type="radio" v-model="form.incident" :value="false" /> No
             </label>
           </div>
         </div>
@@ -140,6 +181,9 @@ export default {
         bmCount: 0,
         mucus: false,
         blood: false,
+        urgency: false,
+        pain: false,
+        incident: false,
       },
       data: storageGet(),
       version,
@@ -197,14 +241,19 @@ export default {
       if (this.isFutureDay(day)) return ``
       const d = this.getDayData(day)
       if (!d) return ``
+      if (d.incident) return `black`
       let score = 0
       if (d.bmCount >= 5) score++
       if (d.mucus) score++
       if (d.blood) score++
+      if (d.urgency) score++
+      if (d.pain) score++
       if (score === 0) return `green`
       if (score === 1) return `yellow`
       if (score === 2) return `orange`
-      return `red`
+      if (score === 3) return `red`
+      if (score === 4) return `dark-red`
+      return `darkest-red`
     },
     openModal(day) {
       if (this.isFutureDay(day)) return
@@ -213,7 +262,7 @@ export default {
       if (existing) {
         this.form = { ...existing }
       } else {
-        this.form = { bmCount: 0, mucus: false, blood: false }
+        this.form = { bmCount: 0, mucus: false, blood: false, urgency: false, pain: false, incident: false }
       }
       this.modalOpen = true
     },
@@ -347,6 +396,19 @@ export default {
 .calendar-cell.red {
   background: #8a1a1a;
 }
+.calendar-cell.dark-red {
+  background: #6a0808;
+}
+.calendar-cell.darkest-red {
+  background: #3a0000;
+}
+.calendar-cell.black {
+  background: #000000;
+}
+.calendar-cell.black .day-number,
+.calendar-cell.black .bm-count {
+  color: #ffffff;
+}
 
 /* Legend */
 .legend {
@@ -377,6 +439,9 @@ export default {
 .swatch.yellow { background: #8a7a00; }
 .swatch.orange { background: #a05000; }
 .swatch.red { background: #8a1a1a; }
+.swatch.dark-red { background: #6a0808; }
+.swatch.darkest-red { background: #3a0000; }
+.swatch.black { background: #000000; }
 
 /* Symptoms list */
 .symptoms-list {
@@ -409,9 +474,6 @@ export default {
 .symptom-item {
   width: min(100%, 260px);
   padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: none;
   color: #d8dcea;
   font-size: 0.84rem;
   font-weight: 500;
