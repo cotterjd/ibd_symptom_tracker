@@ -385,22 +385,22 @@ export default {
 
 /* Color classes */
 .calendar-cell.green {
-  background: #2d7a2d;
+  background: #1e7a1e;
 }
 .calendar-cell.yellow {
-  background: #8a7a00;
+  background: #7a7a00;
 }
 .calendar-cell.orange {
-  background: #a05000;
+  background: #b06000;
 }
 .calendar-cell.red {
-  background: #8a1a1a;
+  background: #cc2200;
 }
 .calendar-cell.dark-red {
-  background: #6a0808;
+  background: #990000;
 }
 .calendar-cell.darkest-red {
-  background: #3a0000;
+  background: #4d0000;
 }
 .calendar-cell.black {
   background: #000000;
@@ -435,12 +435,12 @@ export default {
   border-radius: 3px;
 }
 
-.swatch.green { background: #2d7a2d; }
-.swatch.yellow { background: #8a7a00; }
-.swatch.orange { background: #a05000; }
-.swatch.red { background: #8a1a1a; }
-.swatch.dark-red { background: #6a0808; }
-.swatch.darkest-red { background: #3a0000; }
+.swatch.green { background: #1e7a1e; }
+.swatch.yellow { background: #7a7a00; }
+.swatch.orange { background: #b06000; }
+.swatch.red { background: #cc2200; }
+.swatch.dark-red { background: #990000; }
+.swatch.darkest-red { background: #4d0000; }
 .swatch.black { background: #000000; }
 
 /* Symptoms list */
