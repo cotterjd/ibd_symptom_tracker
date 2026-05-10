@@ -45,8 +45,8 @@
         <div class="legend-item"><span class="swatch yellow"></span> 1 symptom</div>
         <div class="legend-item"><span class="swatch orange"></span> 2 symptoms</div>
         <div class="legend-item"><span class="swatch red"></span> 3 symptoms</div>
-        <div class="legend-item"><span class="swatch dark-red"></span> 4 symptoms</div>
-        <div class="legend-item"><span class="swatch darkest-red"></span> 5 symptoms</div>
+        <div class="legend-item"><span class="swatch magenta"></span> 4 symptoms</div>
+        <div class="legend-item"><span class="swatch purple"></span> 5 symptoms</div>
         <div class="legend-item"><span class="swatch black"></span> Incident</div>
       </div>
 
@@ -252,8 +252,8 @@ export default {
       if (score === 1) return `yellow`
       if (score === 2) return `orange`
       if (score === 3) return `red`
-      if (score === 4) return `dark-red`
-      return `darkest-red`
+      if (score === 4) return `magenta`
+      return `purple`
     },
     openModal(day) {
       if (this.isFutureDay(day)) return
@@ -385,22 +385,22 @@ export default {
 
 /* Color classes */
 .calendar-cell.green {
-  background: #1e7a1e;
+  background: #2e7d32;
 }
 .calendar-cell.yellow {
-  background: #7a7a00;
+  background: #827717;
 }
 .calendar-cell.orange {
-  background: #b06000;
+  background: #b05000;
 }
 .calendar-cell.red {
-  background: #cc2200;
+  background: #c62828;
 }
-.calendar-cell.dark-red {
-  background: #990000;
+.calendar-cell.magenta {
+  background: #880e4f;
 }
-.calendar-cell.darkest-red {
-  background: #4d0000;
+.calendar-cell.purple {
+  background: #4a148c;
 }
 .calendar-cell.black {
   background: #000000;
@@ -435,12 +435,12 @@ export default {
   border-radius: 3px;
 }
 
-.swatch.green { background: #1e7a1e; }
-.swatch.yellow { background: #7a7a00; }
-.swatch.orange { background: #b06000; }
-.swatch.red { background: #cc2200; }
-.swatch.dark-red { background: #990000; }
-.swatch.darkest-red { background: #4d0000; }
+.swatch.green { background: #2e7d32; }
+.swatch.yellow { background: #827717; }
+.swatch.orange { background: #b05000; }
+.swatch.red { background: #c62828; }
+.swatch.magenta { background: #880e4f; }
+.swatch.purple { background: #4a148c; }
 .swatch.black { background: #000000; }
 
 /* Symptoms list */
